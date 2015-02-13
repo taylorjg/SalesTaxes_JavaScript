@@ -19,12 +19,11 @@
         };
 
         var _getSalesTax = function() {
-            var totalWithSalesTax = _getTotal();
-            var totalWithoutSalesTax = 0;
+            var salesTax = 0;
             _receiptItems.forEach(function(receiptItem) {
-                totalWithoutSalesTax += receiptItem.getBasketItem().getPrice();
+                salesTax += receiptItem.getSalesTax();
             });
-            return totalWithSalesTax - totalWithoutSalesTax;
+            return salesTax;
         };
 
         return {
