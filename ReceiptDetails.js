@@ -15,7 +15,7 @@
             _receiptItems.forEach(function(receiptItem) {
                 total += receiptItem.getPriceIncludingSalesTax();
             });
-            return total;
+            return salesTaxes.mathUtils.toPrecision(total);
         };
 
         var _getSalesTax = function() {
@@ -23,7 +23,7 @@
             _receiptItems.forEach(function(receiptItem) {
                 salesTax += receiptItem.getSalesTax();
             });
-            return salesTax;
+            return salesTaxes.mathUtils.toPrecision(salesTax);
         };
 
         return {

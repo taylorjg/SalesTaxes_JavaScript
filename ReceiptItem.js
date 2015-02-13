@@ -16,7 +16,7 @@
         };
 
         var _getPriceIncludingSalesTax = function() {
-            return _basketItem.getPrice() + _salesTax;
+            return salesTaxes.mathUtils.toPrecision(_basketItem.getPrice() + _salesTax);
         };
 
         return {
