@@ -8,7 +8,7 @@
             var receiptItems = [];
             basketItems.forEach(function(basketItem) {
                 var salesTax = _calculateSalesTax(basketItem);
-                var receiptItem = salesTaxes.receiptItem(basketItem, basketItem.getPrice() + salesTax);
+                var receiptItem = salesTaxes.receiptItem(basketItem, salesTax);
                 receiptItems.push(receiptItem);
             });
             return salesTaxes.receiptDetails(receiptItems);
